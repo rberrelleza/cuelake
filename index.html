@@ -1,0 +1,36 @@
+<h1 id="cuelake">CueLake</h1>
+<p>CueLake does the <code class="language-plaintext highlighter-rouge">EL</code> in <code class="language-plaintext highlighter-rouge">ELT</code> (Extract, Load, Transform) pipelines to a <strong>data lakehouse</strong>.</p>
+
+<p>You write simple select statements to extract incremental data and schedule these statements. CueLake uses <strong>Spark SQL</strong> to execute these statements against your databases and then merges incremental data into your data lakehouse (powered by <strong>Apache Iceberg</strong>).</p>
+
+<p>CueLake auto starts and stops the Spark cluster. For every scheduled run, CueLake starts the Spark cluster, loads incremental data into the lakehouse, and then shuts down the cluster.</p>
+
+<h1 id="getting-started">Getting started</h1>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl create namespace cuelake
+kubectl apply -f https://raw.githubusercontent.com/cuebook/cuelake/main/cuelake.yaml -n cuelake
+kubectl port-forward services/lakehouse 8080:80 -n cuelake
+</code></pre></div></div>
+<p>Now open http://localhost:8080</p>
+
+<h1 id="features">Features</h1>
+
+<h3 id="current-limitations">Current Limitations</h3>
+<ul>
+  <li>Supports relational databases (Oracle, MySQL, Postgres) as data source. More sources will be added later.</li>
+  <li>Supports AWS S3 as a destination. Support for ADLS and GCS is in the roadmap.</li>
+  <li>Uses Apache Iceberg as an open table format. Delta support is in the roadmap.</li>
+  <li>Uses AWS Glue as the catalog implementation. Hive support is in the roadmap.</li>
+  <li>Uses Celery for scheduling jobs. Support for Airflow, Dagster and Prefect is in the roadmap.</li>
+</ul>
+
+<h1 id="support">Support</h1>
+<p>For general help using CueLake, read the documentation, or go to <a href="https://github.com/cuebook/cuelake/discussions">Github Discussions</a>.</p>
+
+<p>To report a bug or request a feature, open an <a href="https://github.com/cuebook/cuelake/issues">issue</a>.</p>
+
+<h2 id="contributors">Contributors!</h2>
+
+<ul class="list-style-none">
+
+</ul>
+
