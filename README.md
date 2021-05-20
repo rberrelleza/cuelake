@@ -23,6 +23,11 @@ kubectl port-forward services/lakehouse 8080:80 -n cuelake
 
 Now visit [http://localhost:8080](http://localhost:8080) in your browser.
 
+If you don't want to use a local Kubernetes instance, you deploy it in Okteto Cloud by clicking on the big green button below:
+
+[![Develop on Okteto](https://okteto.com/develop-okteto.svg)](https://cloud.okteto.com/deploy)
+
+
 If you don’t want to use Kubernetes and instead want to try it out on your local machine first, we’ll soon have a docker-compose version. Let us know if you’d want that sooner.
 
 # Features
