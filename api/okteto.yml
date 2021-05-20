@@ -1,0 +1,10 @@
+name: lakehouse
+command: bash
+volumes:
+- /root/.cache/pip
+sync:
+- .:/code
+forward:
+- 8080:80
+reverse:
+- 9000:9000
