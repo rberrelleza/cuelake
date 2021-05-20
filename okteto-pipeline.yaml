@@ -1,0 +1,3 @@
+deploy:
+- kubectl apply -f cuelake.yaml 
+- kubectl annotate --overwrite service lakehouse dev.okteto.com/auto-ingress=true
